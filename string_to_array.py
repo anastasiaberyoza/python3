@@ -1,6 +1,10 @@
+"""It docstring of the module."""
 print ('Enter string')
 string = input()
 def str_to_arr(string):
+     """This function receives a string on input,
+    and on output it gives an array of
+    alphabetical chains in this string"""
     array = []
     for i, char in enumerate(string):
         if char.isalpha():
