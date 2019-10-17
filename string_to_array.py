@@ -1,19 +1,16 @@
-"""It is docstring of the module, which tokenizes the given string"""
+"""This module provides function that tokenizes the given string"""
 
-def str_to_arr(string):
-     
+def str_to_arr(string):     
      """This function receives a string on input,
     and on output it gives an array of
     alphabetical chains in this string"""
      
-    print ('Enter string')
-    string = input()
     array = []
     for i, char in enumerate(string):
         if char.isalpha():
             # the first char can be the first alphabetical char in the string
-            # if so, we assign it number
-            # if the previous char is not alphabetical, then we assign to our char number
+            # if the previous char is not alphabetical, then 
+            # we remember the current char as the first in the alphabetical chain
             if i == 0 or not string[i-1].isalpha():
                 number = i
         # Here we check, whether the char is the last one in the string
@@ -23,9 +20,12 @@ def str_to_arr(string):
                # then we add this substring to our array
                 if i > 0 and not string[i+1].isalpha():
                     array.append(string[number:i+1])
-    # Without the following part the last char won't be added to array
+    # Without the following part the end of the alphastring won't be added to array.
+    # because if the last char is alpha, but the previous is not, the algorithm won't include it in the array
     # So we check if the last char in our string is alpha
     if char.isalpha():
         array.append(string[number:i+1])
     return (array)
+print ('Enter string')
+string = input()
 print(str_to_arr(string))
