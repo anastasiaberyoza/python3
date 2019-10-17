@@ -1,4 +1,4 @@
-"""It is docstring of the module."""
+"""It is docstring of the module, which tokenizes the given string"""
 
 def str_to_arr(string):
      
@@ -23,7 +23,8 @@ def str_to_arr(string):
                # then we add this substring to our array
                 if i > 0 and not string[i+1].isalpha():
                     array.append(string[number:i+1])
-    # If the last char in the string is alpha, then we add it too
+    # Without the following part the last char won't be added to array
+    # So we check if the last char in our string is alpha
     if char.isalpha():
         array.append(string[number:i+1])
     return (array)
