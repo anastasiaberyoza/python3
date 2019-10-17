@@ -1,6 +1,5 @@
 """It is docstring of the module."""
 
-
 def str_to_arr(string):
      
      """This function receives a string on input,
