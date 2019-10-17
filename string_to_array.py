@@ -1,7 +1,7 @@
 """This module provides function that tokenizes the given string"""
 
 def str_to_arr(string):     
-     """This function receives a string on input,
+    """This function receives a string on input,
     and on output it gives an array of
     alphabetical chains in this string"""
      
