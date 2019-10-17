@@ -10,11 +10,10 @@ def str_to_arr(string):
     string = input()
     array = []
     for i, char in enumerate(string):
-        # Here we are trying to find the first alphabetical char in the string
         if char.isalpha():
-        # the first char can be the first alphabetical char in the string
-        # if so, we assign it number
-        # if the previous char is not alphabetical, then we assign to our char number
+            # the first char can be the first alphabetical char in the string
+            # if so, we assign it number
+            # if the previous char is not alphabetical, then we assign to our char number
             if i == 0 or not string[i-1].isalpha():
                 number = i
         # Here we check, whether the char is the last one in the string
