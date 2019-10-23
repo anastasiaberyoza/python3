@@ -20,8 +20,9 @@ def str_to_arr(string):
                # then we add this substring to our array
                 if i > 0 and not string[i+1].isalpha():
                     array.append(string[number:i+1])
-    # 
-    # So we check if the last char in our string is alpha
+    # The part below adds the last alphabetical substring in the array
+    # if the current char is alphabetical, it means that there is no char after it
+    # But our cycle needs the next non-alpha char so as to add the aplhabetical substring
     if char.isalpha():
         array.append(string[number:i+1])
     return (array)
