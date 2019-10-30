@@ -35,7 +35,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(string_to_array.str_to_arr(s), [])
         
     def test_numbers_and_not_alpha(self):
-        s = '123!@#%%'
+        s = '123!@#%'
         self.assertEqual(newday.str_to_arr(s), [])
             
 if __name__ == '__main__':
