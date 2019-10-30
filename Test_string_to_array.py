@@ -2,26 +2,38 @@ import unittest
 import string_to_array
 
 class TestStringMethods(unittest.TestCase):
-    
-    def test_normal_string(self):
+    def test_normal(self):
         s = 'ad b c d'
         self.assertEqual(string_to_array.str_to_arr(s), ['ad', 'b', 'c', 'd'])
         
-    def test_empty_string(self):
+    def test_with_delimiters(self):
+        s = 'ad_b+c-d'
+        self.assertEqual(string_to_array.str_to_arr(s), ['ad', 'b', 'c', 'd'])
+
+    def test_spaces_only(self):
+        s = '     ' #namely 5 spaces
+        self.assertEqual(string_to_array.str_to_arr(s), [])
+
+    def test_spaces_and_alpha(self):
+        s = '     a' #5 spaces and alpha
+        self.assertEqual(string_to_array.str_to_arr(s), ['a'])
+
+    def test_spaces_and_number(self):
+        s = '     1' #5 spaces and number
+        self.assertEqual(string_to_array.str_to_arr(s), [])
+        
+    def test_empty(self):
         s = ''
         self.assertEqual(string_to_array.str_to_arr(s), [])
 
-    def test_no_spaces_string(self):
+    def test_no_spaces(self):
         s = 'abv'
         self.assertEqual(string_to_array.str_to_arr(s), ['abv'])
 
-    def test_digital_string(self):
+    def test_only_numbers(self):
         s = '123'
         self.assertEqual(string_to_array.str_to_arr(s), [])
-
-    def test_delimiters_string(self):
-        s = 'ad_b+c-d'
-        self.assertEqual(string_to_array.str_to_arr(s), ['ad', 'b', 'c', 'd'])
+    
         
 if __name__ == '__main__':
     unittest.main()
