@@ -6,25 +6,27 @@ def str_to_arr(string):
     alphabetical chains in this string"""
      
     array = []
+    number = 0
     for i, char in enumerate(string):
         if char.isalpha():
             # the first char can be the first alphabetical char in the string
             # if the previous char is not alphabetical, then 
             # we remember the current char as the first in the alphabetical chain
-            if i == 0 or not string[i-1].isalpha():
+            if ((i == 0) or not (string[i-1].isalpha())):
                 number = i
-        # Here we check, whether the char is the last one in the string
-        if (i+1)<=(len(string)-1):
-            if char.isalpha():
-               # if char is alphapetical, i is not 0 and the next char is not alphabetical,
-               # then we add this substring to our array
-                if i > 0 and not string[i+1].isalpha():
-                    array.append(string[number:i+1])
+            # if char is non-alpha nd its index is more than 0 and the previous one is alpha
+            # Therefore it is the end of the alphabetical substring
+            # If the previous character is non-alpha as well, we move on
+        else:
+            if ((i > 0) and (string[i-1].isalpha())):
+                array.append(string[number:i])
+            if not (string[i-1].isalpha()):
+                number = i + 1
     # The part below adds the last alphabetical substring in the array
     # if the current char is alphabetical, it means that there is no char after it
     # But our cycle needs the next non-alpha char so as to add the aplhabetical substring
-    if char.isalpha():
-        array.append(string[number:i+1])
+    if number < len (string):
+        array.append(string[number:])
     return (array)
 print ('Enter string')
 string = input()
