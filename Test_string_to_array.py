@@ -37,6 +37,10 @@ class TestStringMethods(unittest.TestCase):
     def test_numbers_and_not_alpha(self):
         s = '123!@#%'
         self.assertEqual(string_to_array.str_to_arr(s), [])
+        
+    def test_number_in_the_end(self):
+        s = 'abv3'
+        self.assertEqual(string_to_array.str_to_arr(s), ['abv'])
             
 if __name__ == '__main__':
     unittest.main()
