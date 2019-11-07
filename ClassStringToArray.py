@@ -1,4 +1,4 @@
-class Tokenization(object):    
+class Tokenizer(object):    
     #it is not a funtion anymore,it's a method
     #when we make a new method, we must add one more argument - "self"
     def str_to_arr(self, string):   
@@ -27,10 +27,10 @@ class Tokenization(object):
             # if the current char is alphabetical, it means that there is no char after it
             # But our cycle needs the next non-alpha char so as to add the aplhabetical substring
             if char.isalpha():
-                array.append(string[number:i+1])
+                array.append(string[number:])
         return (array)
 def main():
-    tokenizate = Tokenization()
+    tokenizate = Tokenizer()
     print ('Enter string')
     string = input()
     print(tokenizate.str_to_arr(string))
