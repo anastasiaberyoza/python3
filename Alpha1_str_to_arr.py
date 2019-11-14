@@ -29,19 +29,19 @@ def str_to_arr(string):
         # if the current char is alphabetical, it means that there is no char after it
         # But our cycle needs the next non-alpha char so as to add the aplhabetical substring
         if char.isalpha():
-            array.append(string[number:i+1])
+            array.append(string[number:])
     return (array)
-print ('Enter string')
-string = input()
-print(str_to_arr(string))
 
 
-"""This class provides method that tokenizes the given string"""
-class Tokenizer(object):    
-    #it is not a funtion anymore,it's a method
-    #when we make a new method, we must add one more argument - "self"
+class Tokenizer(object):
+    """This class provides method that tokenizes the given string"""
+    
+    # it is not a funtion anymore,it's a method
+    # when we make a new method, we must add one more argument - "self"
     def str_to_arr(self, string):   
-        
+        """This method receives a string on input,
+        and on output it gives an array of
+        alphabetical chains in this string"""
         array = []
         number = 0
         if len(string) == 0:
